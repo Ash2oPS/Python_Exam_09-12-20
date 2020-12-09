@@ -5,13 +5,16 @@ import random
 
 finDuJeu = False
 nombreDeVies = 8
-motsPossibles = ["suivre", "survie", "motard", "joyaux", "jockey", "aboyer", "angles", "animee", "canifs", "burger", "banane", "jouets"]
+motsPossibles = ["suivre", "survie", "motard", "joyaux", "jockey", "aboyer", "angles", "animee", "canifs", "burger", "banane", "jouets", "castor", "marbre", "kinder", "ecrans", "donjon"]
 indexMot = random.randint(0, len(motsPossibles) - 1)
 motADeviner = motsPossibles[indexMot]
 motPropose = ""
 
 
-#def afficherCouleurs(MotPropose, lettresCorrectes):
+def afficherCouleurs(MotPropose, indexLettresCorrectes):
+    print(Back.Yellow, "Bonjour")
+
+    
     
 
 
@@ -19,6 +22,7 @@ def compareMots(motPropose, motADeviner):
 
     lettreComparee = ""
     lettresCorrectes = ""
+    indexLettresCorrectes = ""
     
     print("A SUPPRIMER", motPropose, motADeviner)
     for i in range (0, len(motPropose)):
@@ -26,9 +30,11 @@ def compareMots(motPropose, motADeviner):
         for j in range (0, len(motADeviner)):
             if lettreComparee == motADeviner[j]:
                 lettresCorrectes += lettreComparee
+                indexLettresCorrectes += str(i)
                 
-    print(lettresCorrectes)
-    #afficherCouleurs(MotPropose, lettresCorrectes)
+    print(lettresCorrectes, indexLettresCorrectes)
+    afficherCouleurs(MotPropose, indexLettresCorrectes)
+
             
 
 
