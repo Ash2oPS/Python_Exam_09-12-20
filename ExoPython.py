@@ -10,9 +10,24 @@ indexMot = random.randint(0, len(motsPossibles) - 1)
 motADeviner = motsPossibles[indexMot]
 motPropose = ""
 
+def boucleIndexLettresCorrectes(lettre, indexLettresCorrectes):
+    output = False
 
-def afficherCouleurs(MotPropose, indexLettresCorrectes):
-    print(Back.Yellow, "Bonjour")
+    for j in range (0, len(indexLettresCorrectes)):
+        if (indexLettresCorrectes[j] == lettre):
+            output = True
+    return output
+
+
+def afficherCouleurs(motPropose, indexLettresCorrectes):
+    for i in range (0, len(motPropose)):
+        print(boucleIndexLettresCorrectes(motPropose[i], indexLettresCorrectes)
+        #if (boucleIndexLettresCorrectes(motPropose[i], indexLettresCorrectes) == True):
+            #print(Back.YELLOW, motPropose[i], Style.RESET_ALL, end = "")
+        #else:
+            #print(motPropose[i])
+        
+        
 
     
     
@@ -24,7 +39,7 @@ def compareMots(motPropose, motADeviner):
     lettresCorrectes = ""
     indexLettresCorrectes = ""
     
-    print("A SUPPRIMER", motPropose, motADeviner)
+    print("(", motPropose, motADeviner, ")")
     for i in range (0, len(motPropose)):
         lettreComparee = motPropose[i].lower()
         for j in range (0, len(motADeviner)):
@@ -33,7 +48,7 @@ def compareMots(motPropose, motADeviner):
                 indexLettresCorrectes += str(i)
                 
     print(lettresCorrectes, indexLettresCorrectes)
-    afficherCouleurs(MotPropose, indexLettresCorrectes)
+    afficherCouleurs(motPropose, indexLettresCorrectes)
 
             
 
