@@ -4,10 +4,15 @@ from colorama import Fore, Back, Style
 import random
 
 finDuJeu = False
+nombreDeVies = 8
 motsPossibles = ["suivre", "survie", "motard", "joyaux", "jockey", "aboyer", "angles", "animee", "canifs", "burger", "banane", "jouets"]
 indexMot = random.randint(0, len(motsPossibles) - 1)
 motADeviner = motsPossibles[indexMot]
 motPropose = ""
+
+
+#def afficherCouleurs(MotPropose, lettresCorrectes):
+    
 
 
 def compareMots(motPropose, motADeviner):
@@ -23,27 +28,32 @@ def compareMots(motPropose, motADeviner):
                 lettresCorrectes += lettreComparee
                 
     print(lettresCorrectes)
+    #afficherCouleurs(MotPropose, lettresCorrectes)
             
 
 
-while (finDuJeu == False):                                                                      #   DEBUT DE LA BOUCLE DE JEU
+while (finDuJeu == False)  or (nombreDeVies != 0):                                                                     
 
 
-    while (len(motPropose) != 6):                                                               #
-        motPropose = input("Quel mot proposez-vous de 6 caractères proposez-vous ?\n")          #   VERIFIE QUE LE MOT
-        if (len(motPropose) != 6):                                                              #   CONTINENE BIEN 6 LETTRES
-            print("Votre mot n'est pas composé de 6 caractères.")                               #
+    while (len(motPropose) != 6):                                   
+        print("Tentatives restantes :", nombreDeVies, ".")
+        motPropose = input("Quel mot de 6 caractères proposez-vous ?\n")         
+        if (len(motPropose) != 6):                                                            
+            print("Votre mot n'est pas composé de 6 caractères.")                               
     
+    nombreDeVies -= 1
     print("Vous avez proposé le mot \"", motPropose , "\".\n")
-    for i in range (0, len(motPropose)):
-        print(motPropose[i], end = " ")
+    '''for i in range (0, len(motPropose)):
+        print(motPropose[i], end = " ")'''
     print("\n")
     compareMots(motPropose, motADeviner)
         
         
+
     
-    
-    input()
+if (nombreDeVies == 0):
+    print("Oof")    
+input()
     
 
 
