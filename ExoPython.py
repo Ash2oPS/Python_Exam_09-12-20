@@ -19,9 +19,9 @@ def boucleIndexLettresCorrectes(lettre, indexLettresCorrectes):
     return output
 
 
-def afficherCouleurs(motPropose, indexLettresCorrectes):
-    for i in range (0, len(motPropose)):
-        print(boucleIndexLettresCorrectes(motPropose[i], indexLettresCorrectes)
+#def afficherCouleurs(motPropose, indexLettresCorrectes):
+    #for i in range (0, len(motPropose)):
+        #print(boucleIndexLettresCorrectes(motPropose[i], indexLettresCorrectes))
         #if (boucleIndexLettresCorrectes(motPropose[i], indexLettresCorrectes) == True):
             #print(Back.YELLOW, motPropose[i], Style.RESET_ALL, end = "")
         #else:
@@ -48,7 +48,7 @@ def compareMots(motPropose, motADeviner):
                 indexLettresCorrectes += str(i)
                 
     print(lettresCorrectes, indexLettresCorrectes)
-    afficherCouleurs(motPropose, indexLettresCorrectes)
+    #afficherCouleurs(motPropose, indexLettresCorrectes)
 
             
 
@@ -62,6 +62,12 @@ while (finDuJeu == False)  and (nombreDeVies != 0):
         if (len(motPropose) != 6):                                                            
             print("Votre mot n'est pas composé de 6 caractères.")                               
     
+    nombreDeLettresCorrectesPourSavoirSiLeJoueurAGagne = 0
+    for i in range (0, len(motPropose)):
+        if (motADeviner[i] == motPropose[i]):
+            nombreDeLettresCorrectesPourSavoirSiLeJoueurAGagne += 1
+    if nombreDeLettresCorrectesPourSavoirSiLeJoueurAGagne == 6:
+            finDuJeu == True
     nombreDeVies -= 1
     print("Vous avez proposé le mot \"", motPropose , "\".\n")
     '''for i in range (0, len(motPropose)):
@@ -70,24 +76,12 @@ while (finDuJeu == False)  and (nombreDeVies != 0):
     compareMots(motPropose, motADeviner)
         
         
-
     
 if (nombreDeVies == 0):
-    print("Oof")    
+    print("Vous avez perdu. Vous ferez mieux la prochaine fois ! (comme moi d'ailleurs, puisque mon programme ne marche pas.)")
+else:
+    print("Yes ! Bien joué, vous avez gagné !")
 input()
     
 
 
-
-
-
-
-
-
-
-print(Fore.RED + 'some red text', end=" ")
-print(Back.GREEN + 'and with a green background')
-print(Style.DIM + 'and in dim text')
-print(Style.RESET_ALL)
-print('back to normal now')
-input()
