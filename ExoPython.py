@@ -1,9 +1,19 @@
-'''SUIVRE SURVIE MOTARD JOYAUX JOCKEY ABOYER ANGLES ANIMEE CANIFS BURGER'''
-
-
 from colorama import init
 init()
 from colorama import Fore, Back, Style
+
+motsPossibles = ["suivre", "survie", "motard", "joyaux", "jockey", "aboyer", "angles", "animee", "canifs", "burger"]
+
+
+
+
+
+
+
+
+
+
+
 print(Fore.RED + 'some red text', end=" ")
 print(Back.GREEN + 'and with a green background')
 print(Style.DIM + 'and in dim text')
