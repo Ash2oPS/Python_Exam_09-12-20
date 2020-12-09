@@ -1,8 +1,12 @@
 from colorama import init
 init()
 from colorama import Fore, Back, Style
+import random
 
 motsPossibles = ["suivre", "survie", "motard", "joyaux", "jockey", "aboyer", "angles", "animee", "canifs", "burger"]
+indexMot = random.randint(0, 9)
+motADeviner = motsPossibles[indexMot]
+
 
 
 
