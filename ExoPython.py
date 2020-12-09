@@ -32,9 +32,9 @@ def compareMots(motPropose, motADeviner):
             
 
 
-while (finDuJeu == False)  or (nombreDeVies != 0):                                                                     
+while (finDuJeu == False)  and (nombreDeVies != 0):                                                                     
 
-
+    motPropose = ""
     while (len(motPropose) != 6):                                   
         print("Tentatives restantes :", nombreDeVies, ".")
         motPropose = input("Quel mot de 6 caractères proposez-vous ?\n")         
