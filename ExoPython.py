@@ -6,8 +6,12 @@ import random
 motsPossibles = ["suivre", "survie", "motard", "joyaux", "jockey", "aboyer", "angles", "animee", "canifs", "burger"]
 indexMot = random.randint(0, 9)
 motADeviner = motsPossibles[indexMot]
+motPropose = ""
 
-
+while (len(motPropose) != 6):
+    motPropose = input("Quel mot proposez-vous de 6 caractères proposez-vous ?\n")
+    if (len(motPropose) != 6):
+        print("Votre mot n'est pas composé de 6 caractères.")
 
 
 
