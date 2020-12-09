@@ -4,14 +4,26 @@ from colorama import Fore, Back, Style
 import random
 
 finDuJeu = False
-motsPossibles = ["suivre", "survie", "motard", "joyaux", "jockey", "aboyer", "angles", "animee", "canifs", "burger", "banane"]
+motsPossibles = ["suivre", "survie", "motard", "joyaux", "jockey", "aboyer", "angles", "animee", "canifs", "burger", "banane", "jouets"]
 indexMot = random.randint(0, len(motsPossibles) - 1)
 motADeviner = motsPossibles[indexMot]
 motPropose = ""
 
 
 def compareMots(motPropose, motADeviner):
-    print(motPropose, motADeviner)
+
+    lettreComparee = ""
+    lettresCorrectes = ""
+    
+    print("A SUPPRIMER", motPropose, motADeviner)
+    for i in range (0, len(motPropose)):
+        lettreComparee = motPropose[i].lower()
+        for j in range (0, len(motADeviner)):
+            if lettreComparee == motADeviner[j]:
+                lettresCorrectes += lettreComparee
+                
+    print(lettresCorrectes)
+            
 
 
 while (finDuJeu == False):                                                                      #   DEBUT DE LA BOUCLE DE JEU
@@ -23,8 +35,9 @@ while (finDuJeu == False):                                                      
             print("Votre mot n'est pas composé de 6 caractères.")                               #
     
     print("Vous avez proposé le mot \"", motPropose , "\".\n")
-    for i in range (0, 6):
+    for i in range (0, len(motPropose)):
         print(motPropose[i], end = " ")
+    print("\n")
     compareMots(motPropose, motADeviner)
         
         
